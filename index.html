@@ -16,10 +16,10 @@
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app" class="font-primary text-base">
+    <div id="app" class="font-primary text-base flex justify-center">
       <header
         id="header"
-        class="fixed w-full max-w-screen-2xl z-9 flex justify-between items-center px-6 pt-8 md:px-12 lg:px-16"
+        class="max-w-screen-2xl w-full fixed z-9 flex justify-between items-center pt-8 px-6 md:px-12 xl:px-32"
       >
         <!-- Logo -->
         <figure>
@@ -103,18 +103,51 @@
         </div>
 
         <!-- Call To Action button -->
-        <div class="hidden md:block">
-          <a>
-            <button
-              class="bg-primary text-white text-md rounded-full px-6 py-2.5 shadow-lg shadow-primary"
-            >
-              Get Started
-            </button></a
-          >
+        <div class="hidden lg:block">
+          <a> <button class="primary-btn">Get Started</button></a>
         </div>
       </header>
-      <!-- Pricing Product About Us Careers Community Get Started Bring everyone
-      together to build better products. Manage makes it simple for software
+
+      <main id="main" class="w-full flex-col 2xl:items-center gap-10">
+        <!-- Hero Section -->
+        <section
+          id="hero"
+          class="max-w-screen-2xl w-full mx-auto flex flex-col xl:flex-row-reverse items-center xl:justify-between gap-4 pt-24 md:pt-32 xl:pt-40 px-6 md:px-12 xl:px-32"
+        >
+          <figure class="basis-1/2 flex justify-end">
+            <img
+              class="intro__image"
+              src="./images/illustration-intro.svg"
+              alt=""
+            />
+          </figure>
+
+          <div
+            class="basis-1/2 flex flex-col items-center xl:items-start gap-6 xl:gap-8"
+          >
+            <h1
+              class="text-seondary text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center xl:text-start"
+            >
+              <span class="">Bring everyone</span>
+              <span class="xl:block">together to build</span>
+              <span class="md:block">better products.</span>
+            </h1>
+
+            <p
+              class="text-Dark-Grayish-Blue text-md xl:text-lg text-center xl:text-start max-w-xs sm:max-w-xl xl:max-w-sm"
+            >
+              Manage makes it simple for software teams to plan day-to-day tasks
+              while keeping the larger team goals in view.
+            </p>
+
+            <button class="primary-btn">Get Started</button>
+          </div>
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </main>
+      <!--  Manage makes it simple for software
       teams to plan day-to-day tasks while keeping the larger team goals in
       view. Get Started What’s different about Manage? Manage provides all the
       functionality your team needs, without the complexity. Our software is

@@ -7,6 +7,7 @@
     --animationTimingFunc: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 }
+
 @property --menu-bgGrdient1 {
   syntax: '<color>';
   inherits: true;
@@ -20,6 +21,10 @@
 }
 
 @layer components {
+  .primary-btn {
+    @apply bg-primary text-white text-lg rounded-full px-6 xl:px-8 py-2.5 xl:py-3 shadow-lg shadow-primary;
+  }
+
   /**
     * This nav within the above defined @preoperty should trnasitioning the gradient bg color, but it doesn't work with tailwind here.
     */
