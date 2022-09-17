@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="stylesheet" href="./src/index.scss" />
 
     <script type="module" defer src="/src/main.ts"></script>
     <title>Vite + TS</title>
@@ -19,7 +19,7 @@
     <div id="app" class="font-primary text-base">
       <header
         id="header"
-        class="fixed w-full z-9 flex justify-between align-center px-6 pt-8"
+        class="fixed w-full max-w-screen-2xl z-9 flex justify-between items-center px-6 pt-8 md:px-12 lg:px-16"
       >
         <!-- Logo -->
         <figure>
@@ -48,27 +48,40 @@
         </figure>
 
         <!-- Nav/Menu -->
-        <nav
-          id="nav"
-          class="fixed left-0 top-0 w-full h-full px-4 [&:not(&.active)]:hidden transition-transform [&.active]:visible"
-        >
-          <ul
-            class="relative top-0 w-full h-72 rounded-md -translate-y-80 transition-transform bg-vary-light-gray shadow-lg flex flex-col justify-center align-center gap-4 [&.active]:translate-y-32"
-          >
+        <nav id="nav" class="main-menu">
+          <ul class="main-menu-list md:flex-row">
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#">Pricing</a>
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#Pricing"
+                >Pricing</a
+              >
             </li>
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#features">Product</a>
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#features"
+                >Product</a
+              >
             </li>
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#footer">About Us</a>
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#footer"
+                >About Us</a
+              >
             </li>
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#footer">Careers</a>
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#footer"
+                >Careers</a
+              >
             </li>
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#testimonials"
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#testimonials"
                 >Community</a
               >
             </li>
@@ -79,25 +92,26 @@
         <div class="md:hidden">
           <button
             id="menu-btn"
-            class="relative w-6 h-6 flex-col [&.active]:justify-center transition-transform"
-            aria-label="hamburger menu button"
+            class="custom-hamburger-menu"
+            aria-label="hamburger menu button "
             aria-controls="nav"
           >
-            <span
-              class="bg-secondary block w-full h-1/6 my-1 [&.active]:absolute [&.active]:[transform:rotate(45deg)] [&.active:hover]:[transform:rotate(60deg)] [&:not(&.active):hover]:[transform:rotate(10deg)]"
-            ></span>
-            <span
-              class="bg-secondary block w-full h-1/6 my-1 [&.active]:absolute [&.active]:opacity-0"
-            ></span>
-            <span
-              class="bg-secondary block w-full h-1/6 my-1 [&.active]:absolute [&.active]:[transform:rotate(-45deg)] [&.active:hover]:[transform:rotate(-60deg)] [&:not(&.active):hover]:[transform:rotate(-10deg)]"
-            ></span>
+            <span class="bg-secondary block w-full h-1/6 my-1"></span>
+            <span class="bg-secondary block w-full h-1/6 my-1"></span>
+            <span class="bg-secondary block w-full h-1/6 my-1"></span>
           </button>
         </div>
 
-        <!-- <div class="started-btn-wrapper hidden md:visible">
-          <button class="btn bg-primary text-secondary">Get Started</button>
-        </div> -->
+        <!-- Call To Action button -->
+        <div class="hidden md:block">
+          <a>
+            <button
+              class="bg-primary text-white text-md rounded-full px-6 py-2.5 shadow-lg shadow-primary"
+            >
+              Get Started
+            </button></a
+          >
+        </div>
       </header>
       <!-- Pricing Product About Us Careers Community Get Started Bring everyone
       together to build better products. Manage makes it simple for software
