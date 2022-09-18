@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     rollipOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        main: resolve(__dirname, 'dist', 'index.html'),
       },
     },
     minify: 'terser',
