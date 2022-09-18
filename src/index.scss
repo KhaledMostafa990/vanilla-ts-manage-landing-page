@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --animationTimingFunc: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+@property --menu-bgGrdient1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(0, 0, 0, 0);
+}
+
+@property --menu-bgGrdient2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(0, 0, 0, 0);
+}
+
+@layer components {
+  .primary-btn {
+    @apply bg-primary text-white text-lg rounded-full px-6 xl:px-8 py-2.5 xl:py-3 shadow-lg shadow-primary;
+  }
+
+  /**
+    * This nav within the above defined @preoperty should trnasitioning the gradient bg color, but it doesn't work with tailwind here.
+    */
+  .main-menu {
+    @media screen and (max-width: 768px) {
+      @apply fixed left-0 top-0 w-full min-h-screen px-4 transition-transform duration-1000 [&:not(.active)]:hidden;
+      background: linear-gradient(
+        to top,
+        var(--menu-bgGrdient1),
+        var(--menu-bgGrdient2)
+      );
+
+      transition: --menu-bgGrdient1 0.9785s, --menu-bgGrdient2 0.9785s;
+
+      transition-timing-function: var(--animationTimingFunc);
+
+      &.active {
+        --menu-bgGrdient1: rgba(0, 0, 0, 0.5);
+        --menu-bgGrdient2: rgba(0, 0, 0, 0.15);
+        visibility: visible;
+      }
+    }
+  }
+
+  .main-menu-list {
+    @apply flex gap-4;
+
+    @media screen and (max-width: 768px) {
+      @apply bg-vary-light-gray relative top-0 w-full h-72 rounded-md -translate-y-80 shadow-lg flex-col items-center justify-center transition-transform duration-500 [&.active]:translate-y-32;
+      transition-timing-function: var(--animationTimingFunc);
+    }
+  }
+
+  .custom-hamburger-menu {
+    @apply relative w-6 h-6 flex-col transition-transform duration-300;
+    & > * {
+      @apply transition-transform duration-300;
+      transition-timing-function: var(--animationTimingFunc);
+    }
+    // Active
+    &.active {
+      justify-content: center;
+      & > * {
+        position: absolute;
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        // The first and 3rd child to be the shape-> X
+      }
+      & > * {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    // Active and Hovered
+    &.active:hover {
+      justify-content: center;
+      & > * {
+        &:nth-child(1) {
+          transform: rotate(60deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-60deg);
+        }
+      }
+    }
+    // Not Active And hovered
+    &:not(.active):hover {
+      > * {
+        &:nth-child(1) {
+          transform: rotate(10deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-10deg);
+        }
+      }
+    }
+  }
+}
+
+@layer utilities {
+}
