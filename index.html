@@ -10,16 +10,16 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="stylesheet" href="./src/index.scss" />
 
     <script type="module" defer src="/src/main.ts"></script>
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app" class="font-primary text-base">
+    <div id="app" class="font-primary text-base flex justify-center">
       <header
         id="header"
-        class="fixed w-full z-9 flex justify-between align-center px-6 pt-8"
+        class="max-w-screen-2xl w-full fixed z-9 flex justify-between items-center pt-8 px-6 md:px-12 xl:px-32"
       >
         <!-- Logo -->
         <figure>
@@ -48,27 +48,40 @@
         </figure>
 
         <!-- Nav/Menu -->
-        <nav
-          id="nav"
-          class="fixed left-0 top-0 w-full h-full px-4 [&:not(&.active)]:hidden transition-transform [&.active]:visible"
-        >
-          <ul
-            class="relative top-0 w-full h-72 rounded-md -translate-y-80 transition-transform bg-vary-light-gray shadow-lg flex flex-col justify-center align-center gap-4 [&.active]:translate-y-32"
-          >
+        <nav id="nav" class="main-menu">
+          <ul class="main-menu-list md:flex-row">
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#">Pricing</a>
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#Pricing"
+                >Pricing</a
+              >
             </li>
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#features">Product</a>
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#features"
+                >Product</a
+              >
             </li>
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#footer">About Us</a>
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#footer"
+                >About Us</a
+              >
             </li>
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#footer">Careers</a>
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#footer"
+                >Careers</a
+              >
             </li>
             <li id="nav__item" class="text-center">
-              <a class="text-secondary font-bold" href="#testimonials"
+              <a
+                class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
+                href="#testimonials"
                 >Community</a
               >
             </li>
@@ -79,30 +92,183 @@
         <div class="md:hidden">
           <button
             id="menu-btn"
-            class="relative w-6 h-6 flex-col [&.active]:justify-center transition-transform"
-            aria-label="hamburger menu button"
+            class="custom-hamburger-menu"
+            aria-label="hamburger menu button "
             aria-controls="nav"
           >
-            <span
-              class="bg-secondary block w-full h-1/6 my-1 [&.active]:absolute [&.active]:[transform:rotate(45deg)] [&.active:hover]:[transform:rotate(60deg)] [&:not(&.active):hover]:[transform:rotate(10deg)]"
-            ></span>
-            <span
-              class="bg-secondary block w-full h-1/6 my-1 [&.active]:absolute [&.active]:opacity-0"
-            ></span>
-            <span
-              class="bg-secondary block w-full h-1/6 my-1 [&.active]:absolute [&.active]:[transform:rotate(-45deg)] [&.active:hover]:[transform:rotate(-60deg)] [&:not(&.active):hover]:[transform:rotate(-10deg)]"
-            ></span>
+            <span class="bg-secondary block w-full h-1/6 my-1"></span>
+            <span class="bg-secondary block w-full h-1/6 my-1"></span>
+            <span class="bg-secondary block w-full h-1/6 my-1"></span>
           </button>
         </div>
 
-        <!-- <div class="started-btn-wrapper hidden md:visible">
-          <button class="btn bg-primary text-secondary">Get Started</button>
-        </div> -->
+        <!-- Call To Action button -->
+        <div class="hidden lg:block">
+          <a> <button class="primary-btn">Get Started</button></a>
+        </div>
       </header>
-      <!-- Pricing Product About Us Careers Community Get Started Bring everyone
-      together to build better products. Manage makes it simple for software
-      teams to plan day-to-day tasks while keeping the larger team goals in
-      view. Get Started What’s different about Manage? Manage provides all the
+
+      <main
+        id="main"
+        class="w-full flex flex-col 2xl:items-center gap-36 overflow-hidden"
+      >
+        <!-- Hero Section -->
+        <section
+          id="hero"
+          class="max-w-screen-2xl w-full mx-auto flex flex-col xl:flex-row-reverse items-center xl:justify-between gap-4 pt-24 md:pt-32 xl:pt-40 px-6 md:px-12 xl:px-32"
+        >
+          <!-- Hero Image -->
+          <figure class="basis-1/2 flex justify-end">
+            <img
+              class="intro__image"
+              src="./images/illustration-intro.svg"
+              alt=""
+            />
+          </figure>
+
+          <!-- Hero text -->
+          <div
+            class="basis-1/2 flex flex-col items-center xl:items-start gap-6 xl:gap-8"
+          >
+            <h1
+              class="text-secondary text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center xl:text-start"
+            >
+              <span class="">Bring everyone</span>
+              <span class="xl:block">together to build</span>
+              <span class="md:block">better products.</span>
+            </h1>
+
+            <p
+              class="text-Dark-Grayish-Blue text-md xl:text-lg text-center xl:text-start max-w-xs sm:max-w-xl xl:max-w-sm"
+            >
+              Manage makes it simple for software teams to plan day-to-day tasks
+              while keeping the larger team goals in view.
+            </p>
+
+            <button class="primary-btn">Get Started</button>
+          </div>
+        </section>
+
+        <!-- Product Features -->
+        <section
+          id="features"
+          class="max-w-screen-2xl w-full mx-auto flex flex-col lg:flex-row gap-10 md:gap-16 pl-6 md:px-12 xl:px-32"
+        >
+          <!-- Intro -->
+          <section
+            id="features__intro"
+            class="flex flex-col items-center lg:items-start gap-5 pr-6 lg:basis-1/2"
+          >
+            <h2
+              class="text-secondary text-2xl md:text-3xl xl:text-4xl font-semibold text-center lg:text-start"
+            >
+              <span class="">What's different about</span>
+              <span class="block"> Manage?</span>
+            </h2>
+
+            <p
+              class="text-Dark-Grayish-Blue text-center lg:text-start text-md sm:max-w-xl xl:max-w-sm"
+            >
+              Manage provides all the functionality your team needs, without the
+              complexity. Our software is tailor-made for modern digital product
+              teams.
+            </p>
+          </section>
+
+          <!-- Features List -->
+          <ul
+            id="features-list"
+            class="grid grid-cols-12 gap-y-10 md:gap-x-5 lg:basis-1/2"
+          >
+            <li
+              id="feature-item"
+              aria-label="feature item"
+              class="flex flex-col gap-3 col-span-12 md:col-span-6 lg:col-span-12"
+            >
+              <h2
+                class="w-full text-secondary flex items-center md:justify-center lg:md:justify-start text-sm lg:text-base font-bold relative before:absolute before:w-full before:h-full before:left-2 before:bg-primary-200 md:before:hidden"
+              >
+                <span
+                  class="bg-primary text-white text-xl rounded-full flex items-center px-5 h-10 mr-3 lg:mr-8"
+                  >01</span
+                >
+                <span
+                  class="block sm:justify-self-center sm:flex-1 sm:text-center md md:flex-initial md:text-start"
+                >
+                  Track company-wide progress
+                </span>
+              </h2>
+
+              <p
+                class="text-Dark-Grayish-Blue text-start md:text-center lg:text-start lg:pl-24"
+              >
+                See how your day-to-day tasks fit into the wider vision. Go from
+                tracking progress at the milestone level all the way done to the
+                smallest of details. Never lose sight of the bigger
+                pictureagain.
+              </p>
+            </li>
+
+            <li
+              id="feature-item"
+              aria-label="feature item"
+              class="flex flex-col gap-3 col-span-12 md:col-span-6 lg:col-span-12"
+            >
+              <h2
+                class="w-full text-secondary flex items-center md:justify-center lg:md:justify-start text-sm lg:text-base font-bold relative before:absolute before:w-full before:h-full before:left-2 before:bg-primary-200 md:before:hidden"
+              >
+                <span
+                  class="bg-primary text-white text-xl rounded-full flex items-center px-5 h-10 mr-3 lg:mr-8"
+                  >02</span
+                >
+                <span
+                  class="block sm:justify-self-center sm:flex-1 sm:text-center md:flex-initial md:text-start"
+                >
+                  Advanced built-in reports
+                </span>
+              </h2>
+              <p
+                class="text-Dark-Grayish-Blue text-start md:text-center lg:text-start lg:pl-24"
+              >
+                Set internal delivery estimates and track progress toward
+                company goals. Our customisable dashboard helps you build out
+                the reports you need to keep key stakeholders informed.
+              </p>
+            </li>
+
+            <li
+              id="feature-item"
+              aria-label="feature item"
+              class="flex flex-col gap-3 col-span-12 md:col-span-6 md:col-start-4 lg:col-span-12"
+            >
+              <h2
+                class="w-full text-secondary flex items-center md:justify-center lg:md:justify-start text-sm lg:text-base font-bold relative before:absolute before:w-full before:h-full before:left-2 before:bg-primary-200 md:before:hidden"
+              >
+                <span
+                  class="bg-primary text-white text-xl rounded-full flex items-center px-5 h-10 mr-3 lg:mr-8"
+                  >03</span
+                >
+                <span
+                  class="block sm:justify-self-center sm:flex-1 sm:text-center md:flex-initial md:text-start"
+                >
+                  Everything you need in one place
+                </span>
+              </h2>
+              <p
+                class="text-Dark-Grayish-Blue text-start md:text-center lg:text-start lg:pl-24"
+              >
+                Stop jumping from one service to another to communicate, store
+                files, track tasks and share documents. Manage offers an
+                all-in-one team productivity solution.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Testimonials Features -->
+        <section></section>
+      </main>
+      <!--What’s different about Manage? Manage provides all the
       functionality your team needs, without the complexity. Our software is
       tailor-made for modern digital product teams. 01 Track company-wide
       progress See how your day-to-day tasks fit into the wider vision. Go from
