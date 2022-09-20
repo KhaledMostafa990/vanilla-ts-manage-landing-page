@@ -1,5 +1,6 @@
 import handleContactInput from './js/handleContactInput';
 import handleMenuActions from './js/handleMenuActions';
+import { hanldeDraggableSlider } from './js/hanldeDraggableSlider';
 import onScrollHandler from './js/onScrollHandler';
 
 const header = document.getElementById('header');
@@ -13,3 +14,4 @@ const message: any = document.getElementById('input-msg');
 onScrollHandler(header);
 handleMenuActions(menuButton, nav, navList);
 handleContactInput(form, email, message);
+hanldeDraggableSlider();
