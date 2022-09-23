@@ -12,19 +12,22 @@
 
     <link rel="stylesheet" href="./src/index.scss" />
 
-    <script type="module" defer src="/src/main.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
     <title>Vite + TS</title>
   </head>
+
   <body>
     <div id="app" class="font-primary text-base">
-      <!-- ------------------------- -->
+      <!-- ============================== -->
+
+      <!-- ============================== -->
       <!-- Header Start -->
       <header id="header" class="w-full fixed grid grid-cols-12 pb-8">
         <div
           class="col-start-2 col-span-10 flex justify-between md:items-center pt-10"
         >
           <!-- Logo -->
-          <figure>
+          <figure data-animate-while-scroll="fade-down" data-sequence="2">
             <svg xmlns="http://www.w3.org/2000/svg" width="146" height="24">
               <g fill="none" fill-rule="evenodd">
                 <path
@@ -52,35 +55,35 @@
           <!-- Nav/Menu -->
           <nav id="nav" class="main-menu">
             <ul class="main-menu-list md:flex-row">
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
-                  href="#Pricing"
+                  href="#features"
                   >Pricing</a
                 >
               </li>
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#features"
                   >Product</a
                 >
               </li>
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#footer"
                   >About Us</a
                 >
               </li>
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#footer"
                   >Careers</a
                 >
               </li>
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#testimonials"
@@ -91,11 +94,16 @@
           </nav>
 
           <!-- Menu Button -->
-          <div class="md:hidden">
+          <div
+            class="md:hidden"
+            data-animate-while-scroll="fade-down"
+            data-sequence="3"
+          >
             <button
               id="menu-btn"
               class="custom-hamburger-menu"
-              aria-label="hamburger menu button "
+              type="button"
+              aria-label="Toggle navigation"
               aria-controls="nav"
               aria-expanded="false"
             >
@@ -107,26 +115,30 @@
 
           <!-- Call To Action button -->
           <div class="hidden lg:block">
-            <a> <button class="primary-btn">Get Started</button></a>
+            <a href="#features" class="primary-btn">Get Started</a>
           </div>
         </div>
       </header>
       <!-- Header end -->
-      <!-- ------------------------- -->
+      <!-- ============================== -->
 
-      <!-- ------------------------- -->
+      <!-- ============================== -->
       <!-- Main start -->
       <main id="main" class="grid grid-cols-12 gap-y-36 overflow-hidden">
-        <!-- ------------------------- -->
+        <!-- ============================== -->
         <!-- Hero section start -->
         <section
           id="hero"
           class="col-start-2 col-span-10 flex flex-col xl:flex-row-reverse items-center xl:justify-between gap-4 pt-24 md:pt-32 xl:pt-40"
         >
           <!-- Hero Image -->
-          <figure class="basis-1/2 flex justify-end">
+          <figure
+            class="basis-1/2 flex justify-end"
+            data-animate-while-scroll="zoom-in-down"
+            data-sequence="2"
+          >
             <img
-              class="intro__image"
+              class="intro__image min-w-[340px] min-h-[340px] w-full h-full max-w-[580px] max-h-[400px]"
               src="./images/illustration-intro.svg"
               alt=""
             />
@@ -135,6 +147,8 @@
           <!-- Hero text -->
           <div
             class="basis-1/2 flex flex-col items-center xl:items-start gap-6 xl:gap-8"
+            data-animate-while-scroll="fade-up"
+            data-sequence="3"
           >
             <h1
               class="text-secondary text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center xl:text-start"
@@ -151,20 +165,26 @@
               while keeping the larger team goals in view.
             </p>
 
-            <button class="primary-btn">Get Started</button>
+            <a
+              href="#features"
+              class="primary-btn"
+              data-animate-while-scroll="fade-up"
+              data-sequence="4"
+              >Get Started</a
+            >
           </div>
         </section>
         <!-- Hero end -->
-        <!-- ------------------------- -->
+        <!-- ============================== -->
 
-        <!-- ------------------------- -->
+        <!-- ============================== -->
         <!-- Features start -->
         <section
           id="features"
           class="col-start-2 col-span-12 md:col-start-2 md:col-span-10 flex flex-col lg:flex-row gap-10 md:gap-16"
         >
           <!-- Intro -->
-          <section
+          <div
             id="features__intro"
             class="flex flex-col items-center lg:items-start gap-5 pr-6 lg:basis-1/2"
           >
@@ -182,7 +202,7 @@
               complexity. Our software is tailor-made for modern digital product
               teams.
             </p>
-          </section>
+          </div>
 
           <!-- Features List -->
           <ul
@@ -190,8 +210,6 @@
             class="grid grid-cols-12 gap-y-10 md:gap-x-5 lg:basis-1/2"
           >
             <li
-              id="feature-item"
-              aria-label="feature item"
               class="flex flex-col gap-3 col-span-12 md:col-span-6 lg:col-span-12"
             >
               <h2
@@ -219,8 +237,6 @@
             </li>
 
             <li
-              id="feature-item"
-              aria-label="feature item"
               class="flex flex-col gap-3 col-span-12 md:col-span-6 lg:col-span-12"
             >
               <h2
@@ -246,8 +262,6 @@
             </li>
 
             <li
-              id="feature-item"
-              aria-label="feature item"
               class="flex flex-col gap-3 col-span-12 md:col-span-6 md:col-start-4 lg:col-span-12"
             >
               <h2
@@ -274,13 +288,13 @@
           </ul>
         </section>
         <!-- Features end -->
-        <!-- ------------------------- -->
+        <!-- ============================== -->
 
-        <!-- ------------------------- -->
+        <!-- ============================== -->
         <!-- Testimonials start -->
         <section
           id="testimonials"
-          class="col-start-2 col-span-10 overflow-hidden flex flex-col items-center gap-20 pb-20 xl:pb-40"
+          class="col-span-12 overflow-hidden flex flex-col items-center gap-20 pb-20 xl:pb-40"
         >
           <h3
             class="text-secondary text-2xl lg:text-3xl font-semibold text-center"
@@ -288,20 +302,20 @@
             What they've said
           </h3>
 
-          <article
+          <div
             id="slider"
-            class="realtive grid grid-cols-6 w-[3000px] gap-x-6"
-            role="list"
+            class="realtive translate-x-[12.15rem] md:translate-x-[15rem] transition-transform duration-700 grid grid-cols-6 w-[calc(356px*6+1.5rem*6)] md:w-[calc(450px*6+1.5rem*6)] gap-x-6"
           >
             <section
               id="anisha-li"
               class="bg-vary-light-gray w-[356px] col-start-2 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
             >
-              <figure class="">
+              <figure>
                 <img
-                  class="relative -top-6"
+                  class="relative -top-6 pointer-events-none"
                   width="75"
+                  height="50"
                   src="./images/avatar-anisha.png"
                   alt="testimonials avatar image"
                 />
@@ -319,10 +333,11 @@
               class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
             >
-              <figure class="">
+              <figure>
                 <img
-                  class="relative -top-6"
+                  class="relative -top-6 pointer-events-none"
                   width="75"
+                  height="50"
                   src="./images/avatar-ali.png"
                   alt="testimonials avatar image"
                 />
@@ -340,10 +355,11 @@
               class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
             >
-              <figure class="">
+              <figure>
                 <img
-                  class="relative -top-6"
+                  class="relative -top-6 pointer-events-none"
                   width="75"
+                  height="50"
                   src="./images/avatar-richard.png"
                   alt="testimonials avatar image"
                 />
@@ -358,13 +374,14 @@
 
             <section
               id="shanai-gough"
-              class="bg-vary-light-gray w-[356px] col-span-1 col-end-6 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
+              class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
             >
-              <figure class="">
+              <figure>
                 <img
-                  class="relative -top-6"
+                  class="relative -top-6 pointer-events-none"
                   width="75"
+                  height="50"
                   src="./images/avatar-shanai.png"
                   alt="testimonials avatar image"
                 />
@@ -376,36 +393,36 @@
                 without being intrusive.”
               </p>
             </section>
-          </article>
+          </div>
 
           <ul class="md:hidden flex items-center gap-2">
             <li
               data-anisha-li=""
-              class="w-4 h-4 rounded-full border-primary border-2 [&.active]:bg-primary active"
+              class="w-4 h-4 rounded-full border-primary border-2 [&.active]:bg-primary"
             ></li>
             <li
               data-ali-bravo=""
-              class="w-4 h-4 rounded-full border-primary border-2"
+              class="w-4 h-4 rounded-full border-primary border-2 [&.active]:bg-primary active"
             ></li>
             <li
               data-richard-watts=""
-              class="w-4 h-4 rounded-full border-primary border-2"
+              class="w-4 h-4 rounded-full border-primary border-2 [&.active]:bg-primary"
             ></li>
             <li
               data-shanai-gough=""
-              class="w-4 h-4 rounded-full border-primary border-2"
+              class="w-4 h-4 rounded-full border-primary border-2 [&.active]:bg-primary"
             ></li>
           </ul>
 
-          <button class="primary-btn">Get Started</button>
+          <a href="#features" class="primary-btn">Get Started</a>
         </section>
         <!-- Testimonials end -->
-        <!-- ------------------------- -->
+        <!-- ============================== -->
       </main>
       <!-- Main end -->
-      <!-- ------------------------- -->
+      <!-- ============================== -->
 
-      <!-- ------------------------- -->
+      <!-- ============================== -->
       <!-- Footer start -->
       <footer id="footer" class="w-full">
         <section
@@ -422,9 +439,9 @@
               Simplify how your team <span class="lg:block">works today.</span>
             </h3>
 
-            <button class="primary-btn bg-white text-primary">
+            <a href="#features" class="primary-btn bg-white text-primary">
               Get Started
-            </button>
+            </a>
           </div>
         </section>
 
@@ -439,7 +456,6 @@
             <form
               id="footer-form"
               class="flex items-center justify-center gap-4 lg:items-start"
-              action=""
             >
               <div id="form-control" class="basis-[80%] flex max-w-md relative">
                 <input
@@ -472,68 +488,28 @@
             >
               <ul class="flex flex-col gap-3 items-start">
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Home</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Home</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Pricing</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Pricing</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Products</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Products</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    About Us</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> About Us</a>
                 </li>
               </ul>
 
               <ul class="flex flex-col gap-3 items-start">
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Careers</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Careers</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Community</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Community</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg">
                     PrivacyPolicy</a
                   >
                 </li>
@@ -672,7 +648,7 @@
             </div>
           </div>
 
-          <h6
+          <h4
             id="copyright"
             class="col-start-2 col-span-10 text-Dark-Grayish-Blue text-sm text-center py-10 lg:absolute lg:bottom-12 xl:bottom-20 lg:right-0"
           >
@@ -687,11 +663,13 @@
             <span class="block lg:inline-block">
               Coded by <a class="text-very-pale-ged" href="#">Khaled</a>.
             </span>
-          </h6>
+          </h4>
         </section>
       </footer>
       <!-- Footer end -->
-      <!-- ------------------------- -->
+      <!-- ============================== -->
+
+      <!-- ============================== -->
     </div>
   </body>
 </html>
