@@ -142,3 +142,69 @@
 
 @layer utilities {
 }
+
+// ==========================================  //
+// =========    Fade    ===================== //
+
+// Commons
+[data-animate-while-scroll^='fade'] {
+  opacity: 0;
+  transition: all 0.8s ease-in;
+
+  &.animate {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// Specific
+[data-animate-while-scroll='fade-down'] {
+  transform: translate3d(0, -15%, 0);
+}
+
+[data-animate-while-scroll='fade-up'] {
+  transform: translate3d(0, 15%, 0);
+}
+
+[data-animate-while-scroll='fade-up-right'] {
+  transform: translate3d(-9%, 15%, 0);
+}
+
+// ==========================================  //
+// =========    Flip    ===================== //
+
+// Commons
+[data-animate-while-scroll^='flip'] {
+  opacity: 0.66;
+  backface-visibility: hidden;
+  transition: all 0.8s ease-in;
+}
+
+// Specific
+[data-animate-while-scroll^='flip-left'] {
+  transform: perspective(2500px) rotateY(-100deg);
+
+  &.animate {
+    opacity: 1;
+    transform: perspective(2500px) rotateY(0);
+  }
+}
+
+// ==========================================  //
+// =========    Zoom    ===================== //
+
+// Commons
+[data-animate-while-scroll^='zoom'] {
+  opacity: 0;
+  transition: all 0.8s ease-in;
+}
+
+// Specific
+[data-animate-while-scroll^='zoom-in-down'] {
+  transform: translate3d(0, -15%, 0) scale(0.88);
+
+  &.animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}

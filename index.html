@@ -27,7 +27,7 @@
           class="col-start-2 col-span-10 flex justify-between md:items-center pt-10"
         >
           <!-- Logo -->
-          <figure>
+          <figure data-animate-while-scroll="fade-down" data-sequence="2">
             <svg xmlns="http://www.w3.org/2000/svg" width="146" height="24">
               <g fill="none" fill-rule="evenodd">
                 <path
@@ -94,11 +94,16 @@
           </nav>
 
           <!-- Menu Button -->
-          <div class="md:hidden">
+          <div
+            class="md:hidden"
+            data-animate-while-scroll="fade-down"
+            data-sequence="3"
+          >
             <button
               id="menu-btn"
               class="custom-hamburger-menu"
-              aria-label="hamburger menu button "
+              type="button"
+              aria-label="Toggle navigation"
               aria-controls="nav"
               aria-expanded="false"
             >
@@ -127,7 +132,11 @@
           class="col-start-2 col-span-10 flex flex-col xl:flex-row-reverse items-center xl:justify-between gap-4 pt-24 md:pt-32 xl:pt-40"
         >
           <!-- Hero Image -->
-          <figure class="basis-1/2 flex justify-end">
+          <figure
+            class="basis-1/2 flex justify-end"
+            data-animate-while-scroll="zoom-in-down"
+            data-sequence="2"
+          >
             <img
               class="intro__image min-w-[340px] min-h-[340px] w-full h-full max-w-[580px] max-h-[400px]"
               src="./images/illustration-intro.svg"
@@ -138,6 +147,8 @@
           <!-- Hero text -->
           <div
             class="basis-1/2 flex flex-col items-center xl:items-start gap-6 xl:gap-8"
+            data-animate-while-scroll="fade-up"
+            data-sequence="3"
           >
             <h1
               class="text-secondary text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center xl:text-start"
@@ -154,7 +165,13 @@
               while keeping the larger team goals in view.
             </p>
 
-            <a href="#features" class="primary-btn">Get Started</a>
+            <a
+              href="#features"
+              class="primary-btn"
+              data-animate-while-scroll="fade-up"
+              data-sequence="4"
+              >Get Started</a
+            >
           </div>
         </section>
         <!-- Hero end -->

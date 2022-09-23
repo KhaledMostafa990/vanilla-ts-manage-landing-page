@@ -16,7 +16,6 @@ const onRezising = () => {
   viewportWidth = window.innerWidth;
   defaultTransformed = viewportWidth < 768 ? 194.4 : 240;
   setSliderPosition(transformAmount);
-  console.log(transformAmount, viewportWidth, defaultTransformed);
 };
 window.addEventListener('resize', onRezising);
 
