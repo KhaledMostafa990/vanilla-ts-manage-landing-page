@@ -1,7 +1,7 @@
-import handleContactInput from './js/handleContactInput';
-import handleMenuActions from './js/handleMenuActions';
-import { hanldeDraggableSlider } from './js/hanldeDraggableSlider';
-import onScrollHandler from './js/onScrollHandler';
+import handleContactInput from './ts/handleContactInput';
+import handleMenuActions from './ts/handleMenuActions';
+import { hanldeDraggableSlider } from './ts/hanldeDraggableSlider';
+import onScrollHandler from './ts/onScrollHandler';
 
 const header = document.getElementById('header');
 const nav = document.getElementById('nav');

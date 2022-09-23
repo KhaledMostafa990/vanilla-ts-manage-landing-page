@@ -12,12 +12,15 @@
 
     <link rel="stylesheet" href="./src/index.scss" />
 
-    <script type="module" defer src="/src/main.ts"></script>
+    <script type="module" src="/src/main.ts"></script>
     <title>Vite + TS</title>
   </head>
+
   <body>
     <div id="app" class="font-primary text-base">
-      <!-- ------------------------- -->
+      <!-- ============================== -->
+
+      <!-- ============================== -->
       <!-- Header Start -->
       <header id="header" class="w-full fixed grid grid-cols-12 pb-8">
         <div
@@ -52,35 +55,35 @@
           <!-- Nav/Menu -->
           <nav id="nav" class="main-menu">
             <ul class="main-menu-list md:flex-row">
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
-                  href="#Pricing"
+                  href="#features"
                   >Pricing</a
                 >
               </li>
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#features"
                   >Product</a
                 >
               </li>
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#footer"
                   >About Us</a
                 >
               </li>
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#footer"
                   >Careers</a
                 >
               </li>
-              <li id="nav__item" class="text-center">
+              <li class="text-center">
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#testimonials"
@@ -107,17 +110,17 @@
 
           <!-- Call To Action button -->
           <div class="hidden lg:block">
-            <a> <button class="primary-btn">Get Started</button></a>
+            <a href="#features" class="primary-btn">Get Started</a>
           </div>
         </div>
       </header>
       <!-- Header end -->
-      <!-- ------------------------- -->
+      <!-- ============================== -->
 
-      <!-- ------------------------- -->
+      <!-- ============================== -->
       <!-- Main start -->
       <main id="main" class="grid grid-cols-12 gap-y-36 overflow-hidden">
-        <!-- ------------------------- -->
+        <!-- ============================== -->
         <!-- Hero section start -->
         <section
           id="hero"
@@ -126,7 +129,7 @@
           <!-- Hero Image -->
           <figure class="basis-1/2 flex justify-end">
             <img
-              class="intro__image"
+              class="intro__image min-w-[340px] min-h-[340px] w-full h-full max-w-[580px] max-h-[400px]"
               src="./images/illustration-intro.svg"
               alt=""
             />
@@ -151,20 +154,20 @@
               while keeping the larger team goals in view.
             </p>
 
-            <button class="primary-btn">Get Started</button>
+            <a href="#features" class="primary-btn">Get Started</a>
           </div>
         </section>
         <!-- Hero end -->
-        <!-- ------------------------- -->
+        <!-- ============================== -->
 
-        <!-- ------------------------- -->
+        <!-- ============================== -->
         <!-- Features start -->
         <section
           id="features"
           class="col-start-2 col-span-12 md:col-start-2 md:col-span-10 flex flex-col lg:flex-row gap-10 md:gap-16"
         >
           <!-- Intro -->
-          <section
+          <div
             id="features__intro"
             class="flex flex-col items-center lg:items-start gap-5 pr-6 lg:basis-1/2"
           >
@@ -182,7 +185,7 @@
               complexity. Our software is tailor-made for modern digital product
               teams.
             </p>
-          </section>
+          </div>
 
           <!-- Features List -->
           <ul
@@ -190,8 +193,6 @@
             class="grid grid-cols-12 gap-y-10 md:gap-x-5 lg:basis-1/2"
           >
             <li
-              id="feature-item"
-              aria-label="feature item"
               class="flex flex-col gap-3 col-span-12 md:col-span-6 lg:col-span-12"
             >
               <h2
@@ -219,8 +220,6 @@
             </li>
 
             <li
-              id="feature-item"
-              aria-label="feature item"
               class="flex flex-col gap-3 col-span-12 md:col-span-6 lg:col-span-12"
             >
               <h2
@@ -246,8 +245,6 @@
             </li>
 
             <li
-              id="feature-item"
-              aria-label="feature item"
               class="flex flex-col gap-3 col-span-12 md:col-span-6 md:col-start-4 lg:col-span-12"
             >
               <h2
@@ -274,9 +271,9 @@
           </ul>
         </section>
         <!-- Features end -->
-        <!-- ------------------------- -->
+        <!-- ============================== -->
 
-        <!-- ------------------------- -->
+        <!-- ============================== -->
         <!-- Testimonials start -->
         <section
           id="testimonials"
@@ -288,20 +285,20 @@
             What they've said
           </h3>
 
-          <article
+          <div
             id="slider"
             class="realtive translate-x-[12.15rem] md:translate-x-[15rem] transition-transform duration-700 grid grid-cols-6 w-[calc(356px*6+1.5rem*6)] md:w-[calc(450px*6+1.5rem*6)] gap-x-6"
-            role="list"
           >
             <section
               id="anisha-li"
               class="bg-vary-light-gray w-[356px] col-start-2 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
             >
-              <figure class="">
+              <figure>
                 <img
-                  class="relative -top-6"
+                  class="relative -top-6 pointer-events-none"
                   width="75"
+                  height="50"
                   src="./images/avatar-anisha.png"
                   alt="testimonials avatar image"
                 />
@@ -319,10 +316,11 @@
               class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
             >
-              <figure class="">
+              <figure>
                 <img
-                  class="relative -top-6"
+                  class="relative -top-6 pointer-events-none"
                   width="75"
+                  height="50"
                   src="./images/avatar-ali.png"
                   alt="testimonials avatar image"
                 />
@@ -340,10 +338,11 @@
               class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
             >
-              <figure class="">
+              <figure>
                 <img
-                  class="relative -top-6"
+                  class="relative -top-6 pointer-events-none"
                   width="75"
+                  height="50"
                   src="./images/avatar-richard.png"
                   alt="testimonials avatar image"
                 />
@@ -361,10 +360,11 @@
               class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
             >
-              <figure class="">
+              <figure>
                 <img
-                  class="relative -top-6"
+                  class="relative -top-6 pointer-events-none"
                   width="75"
+                  height="50"
                   src="./images/avatar-shanai.png"
                   alt="testimonials avatar image"
                 />
@@ -376,7 +376,7 @@
                 without being intrusive.”
               </p>
             </section>
-          </article>
+          </div>
 
           <ul class="md:hidden flex items-center gap-2">
             <li
@@ -397,15 +397,15 @@
             ></li>
           </ul>
 
-          <button class="primary-btn">Get Started</button>
+          <a href="#features" class="primary-btn">Get Started</a>
         </section>
         <!-- Testimonials end -->
-        <!-- ------------------------- -->
+        <!-- ============================== -->
       </main>
       <!-- Main end -->
-      <!-- ------------------------- -->
+      <!-- ============================== -->
 
-      <!-- ------------------------- -->
+      <!-- ============================== -->
       <!-- Footer start -->
       <footer id="footer" class="w-full">
         <section
@@ -422,9 +422,9 @@
               Simplify how your team <span class="lg:block">works today.</span>
             </h3>
 
-            <button class="primary-btn bg-white text-primary">
+            <a href="#features" class="primary-btn bg-white text-primary">
               Get Started
-            </button>
+            </a>
           </div>
         </section>
 
@@ -439,7 +439,6 @@
             <form
               id="footer-form"
               class="flex items-center justify-center gap-4 lg:items-start"
-              action=""
             >
               <div id="form-control" class="basis-[80%] flex max-w-md relative">
                 <input
@@ -472,68 +471,28 @@
             >
               <ul class="flex flex-col gap-3 items-start">
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Home</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Home</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Pricing</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Pricing</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Products</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Products</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    About Us</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> About Us</a>
                 </li>
               </ul>
 
               <ul class="flex flex-col gap-3 items-start">
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Careers</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Careers</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
-                    Community</a
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg"> Community</a>
                 </li>
                 <li>
-                  <a
-                    id="footer-footer-link"
-                    href="#"
-                    class="text-very-pale-ged text-lg"
-                  >
+                  <a href="#" class="text-very-pale-ged text-lg">
                     PrivacyPolicy</a
                   >
                 </li>
@@ -672,7 +631,7 @@
             </div>
           </div>
 
-          <h6
+          <h4
             id="copyright"
             class="col-start-2 col-span-10 text-Dark-Grayish-Blue text-sm text-center py-10 lg:absolute lg:bottom-12 xl:bottom-20 lg:right-0"
           >
@@ -687,11 +646,13 @@
             <span class="block lg:inline-block">
               Coded by <a class="text-very-pale-ged" href="#">Khaled</a>.
             </span>
-          </h6>
+          </h4>
         </section>
       </footer>
       <!-- Footer end -->
-      <!-- ------------------------- -->
+      <!-- ============================== -->
+
+      <!-- ============================== -->
     </div>
   </body>
 </html>

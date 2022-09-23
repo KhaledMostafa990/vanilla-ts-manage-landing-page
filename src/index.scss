@@ -8,6 +8,17 @@
   }
   html {
     scroll-behavior: smooth;
+    a {
+      cursor: pointer;
+    }
+  }
+  body {
+    &::-webkit-scrollbar {
+      width: 0.56rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply bg-slate-200 rounded-md;
+    }
   }
 }
 
