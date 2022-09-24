@@ -22,19 +22,18 @@
   }
 }
 
-@property --menu-bgGrdient1 {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: rgba(0, 0, 0, 0);
-}
-
-@property --menu-bgGrdient2 {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: rgba(0, 0, 0, 0);
-}
-
 @layer components {
+  @property --menu-bgGrdient1 {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: rgba(0, 0, 0, 0);
+  }
+
+  @property --menu-bgGrdient2 {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: rgba(0, 0, 0, 0);
+  }
   #header {
     z-index: 9;
     transition: transform 0.448s ease-in-out, background-color 0.375s linear;
@@ -149,7 +148,7 @@
 // Commons
 [data-animate-while-scroll^='fade'] {
   opacity: 0;
-  transition: all 0.8s ease-in;
+  transition: all 0.489s ease-out;
 
   &.animate {
     opacity: 1;
@@ -159,15 +158,23 @@
 
 // Specific
 [data-animate-while-scroll='fade-down'] {
-  transform: translate3d(0, -15%, 0);
+  transform: translate3d(0, -25%, 0);
 }
 
 [data-animate-while-scroll='fade-up'] {
-  transform: translate3d(0, 15%, 0);
+  transform: translate3d(0, 25%, 0);
+}
+
+[data-animate-while-scroll='fade-left'] {
+  transform: translate3d(25%, 0%, 0);
+}
+
+[data-animate-while-scroll='fade-up-left'] {
+  transform: translate3d(25%, 25%, 0);
 }
 
 [data-animate-while-scroll='fade-up-right'] {
-  transform: translate3d(-9%, 15%, 0);
+  transform: translate3d(-25%, 25%, 0);
 }
 
 // ==========================================  //
@@ -177,7 +184,7 @@
 [data-animate-while-scroll^='flip'] {
   opacity: 0.66;
   backface-visibility: hidden;
-  transition: all 0.8s ease-in;
+  transition: all 0.489s ease-out;
 }
 
 // Specific
@@ -196,15 +203,15 @@
 // Commons
 [data-animate-while-scroll^='zoom'] {
   opacity: 0;
-  transition: all 0.8s ease-in;
-}
-
-// Specific
-[data-animate-while-scroll^='zoom-in-down'] {
-  transform: translate3d(0, -15%, 0) scale(0.88);
+  transition: all 0.489s ease-out;
 
   &.animate {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
   }
+}
+
+// Specific
+[data-animate-while-scroll^='zoom-in-up'] {
+  transform: translate3d(0, 15%, 0) scale(0.88);
 }

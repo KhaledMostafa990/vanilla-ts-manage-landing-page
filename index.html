@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Document character encoding -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Mobile-optimization viewport  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Website meta description  -->
+    <meta
+      name="description"
+      content="Manage makes it simple for software teams to plan day-to-day task"
+    />
+
+    <!-- Website Title -->
+    <title>Vite + TS</title>
+
+    <!-- Faveicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite-faveicon.svg" />
+
+    <!-- Font Family -->
     <link
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
+      media="all"
+      disabled
     />
 
+    <!-- Tailwind and scss -->
     <link rel="stylesheet" href="./src/index.scss" />
 
+    <!-- JS - Resposible for compiling all files for production by Vite build tool (including scss link above )-->
     <script type="module" src="/src/main.ts"></script>
-    <title>Vite + TS</title>
   </head>
 
   <body>
     <div id="app" class="font-primary text-base">
       <!-- ============================== -->
-
-      <!-- ============================== -->
       <!-- Header Start -->
-      <header id="header" class="w-full fixed grid grid-cols-12 pb-8">
+      <header id="header" class="w-full fixed grid grid-cols-12 pb-4">
         <div
           class="col-start-2 col-span-10 flex justify-between md:items-center pt-10"
         >
           <!-- Logo -->
-          <figure data-animate-while-scroll="fade-down" data-sequence="2">
+          <figure data-animate-while-scroll="fade-down" data-sequence="1">
             <svg xmlns="http://www.w3.org/2000/svg" width="146" height="24">
               <g fill="none" fill-rule="evenodd">
                 <path
@@ -55,35 +71,55 @@
           <!-- Nav/Menu -->
           <nav id="nav" class="main-menu">
             <ul class="main-menu-list md:flex-row">
-              <li class="text-center">
+              <li
+                class="text-center"
+                data-animate-while-scroll="fade-down"
+                data-sequence="1"
+              >
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#features"
                   >Pricing</a
                 >
               </li>
-              <li class="text-center">
+              <li
+                class="text-center"
+                data-animate-while-scroll="fade-down"
+                data-sequence="2"
+              >
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#features"
                   >Product</a
                 >
               </li>
-              <li class="text-center">
+              <li
+                class="text-center"
+                data-animate-while-scroll="fade-down"
+                data-sequence="3"
+              >
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#footer"
                   >About Us</a
                 >
               </li>
-              <li class="text-center">
+              <li
+                class="text-center"
+                data-animate-while-scroll="fade-down"
+                data-sequence="4"
+              >
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#footer"
                   >Careers</a
                 >
               </li>
-              <li class="text-center">
+              <li
+                class="text-center"
+                data-animate-while-scroll="fade-down"
+                data-sequence="5"
+              >
                 <a
                   class="text-secondary font-bold transition-all duration-500 ease-in-out hover:opacity-80 hover:text-lg"
                   href="#testimonials"
@@ -97,7 +133,7 @@
           <div
             class="md:hidden"
             data-animate-while-scroll="fade-down"
-            data-sequence="3"
+            data-sequence="2"
           >
             <button
               id="menu-btn"
@@ -114,7 +150,11 @@
           </div>
 
           <!-- Call To Action button -->
-          <div class="hidden lg:block">
+          <div
+            class="hidden lg:block"
+            data-animate-while-scroll="fade-down"
+            data-sequence="6"
+          >
             <a href="#features" class="primary-btn">Get Started</a>
           </div>
         </div>
@@ -134,8 +174,8 @@
           <!-- Hero Image -->
           <figure
             class="basis-1/2 flex justify-end"
-            data-animate-while-scroll="zoom-in-down"
-            data-sequence="2"
+            data-animate-while-scroll="zoom-in-up"
+            data-sequence="3"
           >
             <img
               class="intro__image min-w-[340px] min-h-[340px] w-full h-full max-w-[580px] max-h-[400px]"
@@ -147,11 +187,11 @@
           <!-- Hero text -->
           <div
             class="basis-1/2 flex flex-col items-center xl:items-start gap-6 xl:gap-8"
-            data-animate-while-scroll="fade-up"
-            data-sequence="3"
           >
             <h1
               class="text-secondary text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center xl:text-start"
+              data-animate-while-scroll="fade-up"
+              data-sequence="4"
             >
               <span class="">Bring everyone</span>
               <span class="xl:block">together to build</span>
@@ -160,6 +200,8 @@
 
             <p
               class="text-Dark-Grayish-Blue text-md xl:text-lg text-center xl:text-start max-w-xs sm:max-w-xl xl:max-w-sm"
+              data-animate-while-scroll="fade-up"
+              data-sequence="5"
             >
               Manage makes it simple for software teams to plan day-to-day tasks
               while keeping the larger team goals in view.
@@ -169,7 +211,7 @@
               href="#features"
               class="primary-btn"
               data-animate-while-scroll="fade-up"
-              data-sequence="4"
+              data-sequence="5"
               >Get Started</a
             >
           </div>
@@ -190,6 +232,8 @@
           >
             <h2
               class="text-secondary text-2xl md:text-3xl xl:text-4xl font-semibold text-center lg:text-start"
+              data-animate-while-scroll="fade-up"
+              data-sequence="1"
             >
               <span class="">What's different about</span>
               <span class="block"> Manage?</span>
@@ -197,6 +241,8 @@
 
             <p
               class="text-Dark-Grayish-Blue text-center lg:text-start text-md sm:max-w-xl xl:max-w-sm"
+              data-animate-while-scroll="fade-up"
+              data-sequence="2"
             >
               Manage provides all the functionality your team needs, without the
               complexity. Our software is tailor-made for modern digital product
@@ -214,6 +260,8 @@
             >
               <h2
                 class="w-full text-secondary flex items-center md:justify-center lg:md:justify-start text-sm lg:text-base font-bold relative before:absolute before:w-full before:h-full before:left-2 before:bg-primary-200 md:before:hidden"
+                data-animate-while-scroll="fade-left"
+                data-sequence="1"
               >
                 <span
                   class="bg-primary text-white text-xl rounded-full flex items-center px-5 h-10 mr-3 lg:mr-8"
@@ -228,6 +276,8 @@
 
               <p
                 class="text-Dark-Grayish-Blue text-start md:text-center lg:text-start lg:pl-24"
+                data-animate-while-scroll="fade-left"
+                data-sequence="2"
               >
                 See how your day-to-day tasks fit into the wider vision. Go from
                 tracking progress at the milestone level all the way done to the
@@ -241,6 +291,8 @@
             >
               <h2
                 class="w-full text-secondary flex items-center md:justify-center lg:md:justify-start text-sm lg:text-base font-bold relative before:absolute before:w-full before:h-full before:left-2 before:bg-primary-200 md:before:hidden"
+                data-animate-while-scroll="fade-left"
+                data-sequence="2"
               >
                 <span
                   class="bg-primary text-white text-xl rounded-full flex items-center px-5 h-10 mr-3 lg:mr-8"
@@ -254,6 +306,8 @@
               </h2>
               <p
                 class="text-Dark-Grayish-Blue text-start md:text-center lg:text-start lg:pl-24"
+                data-animate-while-scroll="fade-left"
+                data-sequence="3"
               >
                 Set internal delivery estimates and track progress toward
                 company goals. Our customisable dashboard helps you build out
@@ -266,6 +320,8 @@
             >
               <h2
                 class="w-full text-secondary flex items-center md:justify-center lg:md:justify-start text-sm lg:text-base font-bold relative before:absolute before:w-full before:h-full before:left-2 before:bg-primary-200 md:before:hidden"
+                data-animate-while-scroll="fade-left"
+                data-sequence="3"
               >
                 <span
                   class="bg-primary text-white text-xl rounded-full flex items-center px-5 h-10 mr-3 lg:mr-8"
@@ -279,6 +335,8 @@
               </h2>
               <p
                 class="text-Dark-Grayish-Blue text-start md:text-center lg:text-start lg:pl-24"
+                data-animate-while-scroll="fade-left"
+                data-sequence="4"
               >
                 Stop jumping from one service to another to communicate, store
                 files, track tasks and share documents. Manage offers an
@@ -298,6 +356,8 @@
         >
           <h3
             class="text-secondary text-2xl lg:text-3xl font-semibold text-center"
+            data-animate-while-scroll="fade-up"
+            data-sequence="1"
           >
             What they've said
           </h3>
@@ -310,6 +370,8 @@
               id="anisha-li"
               class="bg-vary-light-gray w-[356px] col-start-2 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
+              data-animate-while-scroll="zoom-in-up"
+              data-sequence="1"
             >
               <figure>
                 <img
@@ -332,6 +394,8 @@
               id="ali-bravo"
               class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
+              data-animate-while-scroll="zoom-in-up"
+              data-sequence="2"
             >
               <figure>
                 <img
@@ -354,6 +418,8 @@
               id="richard-watts"
               class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
+              data-animate-while-scroll="zoom-in-up"
+              data-sequence="3"
             >
               <figure>
                 <img
@@ -376,6 +442,8 @@
               id="shanai-gough"
               class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
+              data-animate-while-scroll="zoom-in-up"
+              data-sequence="4"
             >
               <figure>
                 <img
@@ -395,7 +463,11 @@
             </section>
           </div>
 
-          <ul class="md:hidden flex items-center gap-2">
+          <ul
+            class="md:hidden flex items-center gap-2"
+            data-animate-while-scroll="zoom-in-up"
+            data-sequence="5"
+          >
             <li
               data-anisha-li=""
               class="w-4 h-4 rounded-full border-primary border-2 [&.active]:bg-primary"
@@ -414,7 +486,13 @@
             ></li>
           </ul>
 
-          <a href="#features" class="primary-btn">Get Started</a>
+          <a
+            href="#features"
+            class="primary-btn"
+            data-animate-while-scroll="zoom-in-up"
+            data-sequence="5"
+            >Get Started</a
+          >
         </section>
         <!-- Testimonials end -->
         <!-- ============================== -->
@@ -435,11 +513,18 @@
           >
             <h3
               class="text-vary-light-gray text-4xl xl:text-5xl font-semibold text-center lg:text-start"
+              data-animate-while-scroll="fade-up"
+              data-sequence="1"
             >
               Simplify how your team <span class="lg:block">works today.</span>
             </h3>
 
-            <a href="#features" class="primary-btn bg-white text-primary">
+            <a
+              href="#features"
+              class="primary-btn bg-white text-primary"
+              data-animate-while-scroll="fade-up"
+              data-sequence="2"
+            >
               Get Started
             </a>
           </div>
@@ -456,6 +541,8 @@
             <form
               id="footer-form"
               class="flex items-center justify-center gap-4 lg:items-start"
+              data-animate-while-scroll="fade-up"
+              data-sequence="1"
             >
               <div id="form-control" class="basis-[80%] flex max-w-md relative">
                 <input
@@ -485,6 +572,8 @@
               id="footer-nav"
               class="flex justify-between sm:justify-evenly lg:justify-between gap-6 xl:gap-28 2xl:gap-64 px-6 lg:px-0"
               aria-label="Footer"
+              data-animate-while-scroll="fade-up"
+              data-sequence="2"
             >
               <ul class="flex flex-col gap-3 items-start">
                 <li>
@@ -519,6 +608,8 @@
             <div
               id="footer__logo-icons-wrapper"
               class="flex flex-col-reverse lg:flex-col items-center gap-10 lg:gap-16"
+              data-animate-while-scroll="fade-up"
+              data-sequence="3"
             >
               <figure class="flex justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="146" height="24">
@@ -651,6 +742,8 @@
           <h4
             id="copyright"
             class="col-start-2 col-span-10 text-Dark-Grayish-Blue text-sm text-center py-10 lg:absolute lg:bottom-12 xl:bottom-20 lg:right-0"
+            data-animate-while-scroll="fade-up"
+            data-sequence="1"
           >
             Challenge by
             <a
@@ -667,8 +760,6 @@
         </section>
       </footer>
       <!-- Footer end -->
-      <!-- ============================== -->
-
       <!-- ============================== -->
     </div>
   </body>
