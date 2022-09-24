@@ -22,14 +22,12 @@ function observer(entries: any) {
       isIntersecting: boolean;
     }) => {
       // While Scrolling..
-      if (!isIntersecting) {
-        // console.log('No', target);
-        addAnimation(target, false);
-        return;
-      } else {
-        console.log(target.dataset['sequence']);
-        // console.log('yes', target);
+      if (isIntersecting) {
         addAnimation(target, true);
+      } else {
+        // The below function will make the animation working with up & down scrolling
+        // addAnimation(target, false);
+        return;
       }
     }
   );
@@ -38,8 +36,8 @@ function observer(entries: any) {
 function addAnimation(target: HTMLElement, isIntersecting: boolean) {
   if (target.dataset['sequence']) {
     target.style.setProperty(
-      'transition-duration',
-      `${Number(target.dataset['sequence']) * 0.45 + 0.15}s`
+      'transition-delay',
+      `${Number(target.dataset['sequence']) * 0.188}s`
     );
 
     toggleAnimateClass(target, isIntersecting);
