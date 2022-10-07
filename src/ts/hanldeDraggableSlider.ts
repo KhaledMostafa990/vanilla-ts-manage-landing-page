@@ -8,7 +8,8 @@ let transformAmount: number = 0;
 let latestTransformAmount: number = 0;
 let animationID: number;
 let movementAmount: number = 0;
-
+let firstInView: boolean = false;
+let lastInView: boolean = false;
 let viewportWidth: number = window.innerWidth;
 let defaultTransformed = viewportWidth < 768 ? 194.4 : 240;
 
@@ -22,7 +23,7 @@ window.addEventListener('resize', onRezising);
 export function hanldeDraggableSlider(): void {
   // Listen to dragging the slides with mobile touch and mouse events
 
-  slides.forEach((slide: HTMLElement | any): void => {
+  slides.forEach((slide: HTMLElement | any, idx: number): void => {
     slide?.addEventListener('touchstart', touchStart, { passive: true });
     slide?.addEventListener('touchend', touchEnd(slide), { passive: true });
     slide?.addEventListener('touchmove', touchMove, { passive: true });
@@ -31,8 +32,8 @@ export function hanldeDraggableSlider(): void {
     slide?.addEventListener('mousemove', touchMove);
     slide?.addEventListener('mouseup', touchEnd(slide));
     slide?.addEventListener('mouseleave', touchEnd(slide));
-    slide?.parentElement?.addEventListener('mouseup', touchEnd(slide));
-    slide?.parentElement?.addEventListener('mouseleave', touchEnd(slide));
+    // slide?.parentElement?.addEventListener('mouseup', touchEnd(slide));
+    // slide?.parentElement?.addEventListener('mouseleave', touchEnd(slide));
   });
 }
 
@@ -58,6 +59,20 @@ function touchMove(event: any) {
 /**
  * Get the postion X while moving event running to get the transformed value that used simultaneously in animateSlider function until touch end.
  */
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('inview');
+      } else {
+        entry.target.classList.remove('inview');
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+observer.observe(slides[0]);
+observer.observe(slides[slides.length - 1]);
 
 function touchEnd(slide: HTMLElement) {
   return () => {
@@ -65,16 +80,21 @@ function touchEnd(slide: HTMLElement) {
     cancelAnimationFrame(animationID);
     slide.style.cursor = 'grab';
     dragging = false;
-
-    if (latestMoveLength < -150 && slide.nextElementSibling !== null) {
+    console.log(latestMoveLength);
+    if (
+      latestMoveLength < -100 &&
+      slide.nextElementSibling != null &&
+      !slides[3].classList.contains('inview')
+    ) {
       movementAmount++;
 
       transformAmount = (-slide.offsetWidth - sliderGap) * movementAmount;
       latestTransformAmount = transformAmount;
       handleActiveTab(slide, latestMoveLength);
     } else if (
-      latestMoveLength > 150 &&
-      slide.previousElementSibling !== null
+      latestMoveLength > 100 &&
+      slide.previousElementSibling != null &&
+      !slides[0].classList.contains('inview')
     ) {
       movementAmount--;
 

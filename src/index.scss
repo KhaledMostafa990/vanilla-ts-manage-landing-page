@@ -202,16 +202,20 @@
 
 // Commons
 [data-animate-while-scroll^='zoom'] {
-  opacity: 0;
-  transition: all 0.489s ease-out;
+  &:not([data-stagger-children]) {
+    opacity: 0;
+    transition: all 0.489s ease-out;
 
-  &.animate {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
+    &.animate {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
   }
 }
 
 // Specific
 [data-animate-while-scroll^='zoom-in-up'] {
-  transform: translate3d(0, 15%, 0) scale(0.88);
+  &:not([data-stagger-children]) {
+    transform: translate3d(0, 15%, 0) scale(0.88);
+  }
 }
