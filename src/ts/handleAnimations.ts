@@ -34,7 +34,6 @@ function observer(entries: any) {
 }
 
 function addAnimation(target: HTMLElement, isIntersecting: boolean) {
-  console.log(target.dataset.staggerChildren);
   if (target.dataset.staggerChildren) {
     [...target.children].forEach((el: any, idx: number) => {
       el?.style?.setProperty(

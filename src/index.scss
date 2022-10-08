@@ -36,24 +36,24 @@
   }
   #header {
     z-index: 9;
-    transition: transform 0.448s ease-in-out, background-color 0.375s linear;
+    transition: all 0.73s ease-out;
 
     &.scroll-up {
-      @apply bg-vary-light-gray rounded-md;
+      @apply bg-white rounded-sm shadow-md py-8;
       transform: translate3d(0, 0%, 0);
     }
 
     &.scroll-down {
-      transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -140%, 0);
     }
 
     &.reset {
-      @apply bg-transparent;
+      @apply bg-transparent shadow-none py-10;
     }
   }
 
   .primary-btn {
-    @apply bg-primary text-white text-lg rounded-full px-6 xl:px-8 py-2.5 xl:py-3 shadow-lg shadow-primary;
+    @apply bg-primary text-white text-lg rounded-full px-6 xl:px-8 py-2.5 xl:py-3 shadow-md shadow-primary;
   }
 
   /**

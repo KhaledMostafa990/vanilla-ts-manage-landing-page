@@ -8,14 +8,14 @@ let transformAmount: number = 0;
 let latestTransformAmount: number = 0;
 let animationID: number;
 let movementAmount: number = 0;
-let firstInView: boolean = false;
-let lastInView: boolean = false;
 let viewportWidth: number = window.innerWidth;
-let defaultTransformed = viewportWidth < 768 ? 194.4 : 240;
+let defaultTransformed =
+  viewportWidth < 768 ? 194.4 : viewportWidth < 1600 ? 240 : 250;
 
 const onRezising = () => {
   viewportWidth = window.innerWidth;
-  defaultTransformed = viewportWidth < 768 ? 194.4 : 240;
+  defaultTransformed =
+    viewportWidth < 768 ? 194.4 : viewportWidth < 1600 ? 240 : 250;
   setSliderPosition(transformAmount);
 };
 window.addEventListener('resize', onRezising);
@@ -24,9 +24,9 @@ export function hanldeDraggableSlider(): void {
   // Listen to dragging the slides with mobile touch and mouse events
 
   slides.forEach((slide: HTMLElement | any, idx: number): void => {
-    slide?.addEventListener('touchstart', touchStart, { passive: true });
-    slide?.addEventListener('touchend', touchEnd(slide), { passive: true });
-    slide?.addEventListener('touchmove', touchMove, { passive: true });
+    slide?.addEventListener('touchstart', touchStart);
+    slide?.addEventListener('touchend', touchEnd(slide));
+    slide?.addEventListener('touchmove', touchMove);
 
     slide?.addEventListener('mousedown', touchStart);
     slide?.addEventListener('mousemove', touchMove);
@@ -69,7 +69,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.5 }
+  { threshold: 0.8 }
 );
 observer.observe(slides[0]);
 observer.observe(slides[slides.length - 1]);
@@ -81,11 +81,7 @@ function touchEnd(slide: HTMLElement) {
     slide.style.cursor = 'grab';
     dragging = false;
     console.log(latestMoveLength);
-    if (
-      latestMoveLength < -100 &&
-      slide.nextElementSibling != null &&
-      !slides[3].classList.contains('inview')
-    ) {
+    if (latestMoveLength < -100 && !slides[3].classList.contains('inview')) {
       movementAmount++;
 
       transformAmount = (-slide.offsetWidth - sliderGap) * movementAmount;
@@ -93,7 +89,6 @@ function touchEnd(slide: HTMLElement) {
       handleActiveTab(slide, latestMoveLength);
     } else if (
       latestMoveLength > 100 &&
-      slide.previousElementSibling != null &&
       !slides[0].classList.contains('inview')
     ) {
       movementAmount--;
