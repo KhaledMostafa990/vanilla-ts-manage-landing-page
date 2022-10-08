@@ -38,9 +38,9 @@
     <div id="app" class="font-primary text-base">
       <!-- ============================== -->
       <!-- Header Start -->
-      <header id="header" class="w-full fixed grid grid-cols-12 pb-4">
+      <header id="header" class="w-full fixed grid grid-cols-12 py-10">
         <div
-          class="col-start-2 col-span-10 flex justify-between md:items-center pt-10"
+          class="col-start-2 col-span-10 flex justify-between md:items-center"
         >
           <!-- Logo -->
           <figure data-animate-while-scroll="fade-down" data-sequence="1">
@@ -169,7 +169,7 @@
         <!-- Hero section start -->
         <section
           id="hero"
-          class="col-start-2 col-span-10 flex flex-col xl:flex-row-reverse items-center xl:justify-between gap-4 pt-24 md:pt-32 xl:pt-40"
+          class="col-start-2 col-span-10 flex flex-col xl:flex-row-reverse items-center xl:justify-between gap-4 pt-24 md:pt-32 xl:pt-40 xl:min-h-screen"
         >
           <!-- Hero Image -->
           <figure
@@ -364,14 +364,15 @@
 
           <div
             id="slider"
-            class="realtive translate-x-[12.15rem] md:translate-x-[15rem] transition-transform duration-700 grid grid-cols-6 w-[calc(356px*6+1.5rem*6)] md:w-[calc(450px*6+1.5rem*6)] gap-x-6"
+            class="realtive translate-x-[12.15rem] md:translate-x-[15rem] transition-transform duration-700 grid grid-cols-6 w-[calc(356px*6+1.5rem*6)] md:w-[calc(450px*6+1.5rem*6)] 3xl:w-[calc(500px*6+1.5rem*6)] gap-x-6"
+            data-animate-while-scroll="zoom-in-up"
+            data-stagger-children="0.2"
           >
             <section
               id="anisha-li"
-              class="bg-vary-light-gray w-[356px] col-start-2 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
+              class="bg-vary-light-gray w-[356px] col-start-2 md:w-[450px] 3xl:w-[500px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
               data-animate-while-scroll="zoom-in-up"
-              data-sequence="1"
             >
               <figure>
                 <img
@@ -392,10 +393,9 @@
 
             <section
               id="ali-bravo"
-              class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
+              class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] 3xl:w-[500px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
               data-animate-while-scroll="zoom-in-up"
-              data-sequence="2"
             >
               <figure>
                 <img
@@ -416,10 +416,9 @@
 
             <section
               id="richard-watts"
-              class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
+              class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] 3xl:w-[500px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
               data-animate-while-scroll="zoom-in-up"
-              data-sequence="3"
             >
               <figure>
                 <img
@@ -440,10 +439,9 @@
 
             <section
               id="shanai-gough"
-              class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] flex flex-col items-center rounded-xl px-3 pb-6"
+              class="bg-vary-light-gray w-[356px] col-span-1 md:w-[450px] 3xl:w-[500px] flex flex-col items-center rounded-xl px-3 pb-6"
               aria-label="testimonial item"
               data-animate-while-scroll="zoom-in-up"
-              data-sequence="4"
             >
               <figure>
                 <img
@@ -466,7 +464,7 @@
           <ul
             class="md:hidden flex items-center gap-2"
             data-animate-while-scroll="zoom-in-up"
-            data-sequence="5"
+            data-sequence="2"
           >
             <li
               data-anisha-li=""
@@ -490,7 +488,7 @@
             href="#features"
             class="primary-btn"
             data-animate-while-scroll="zoom-in-up"
-            data-sequence="5"
+            data-sequence="3"
             >Get Started</a
           >
         </section>

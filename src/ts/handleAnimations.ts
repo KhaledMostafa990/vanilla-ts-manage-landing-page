@@ -34,12 +34,20 @@ function observer(entries: any) {
 }
 
 function addAnimation(target: HTMLElement, isIntersecting: boolean) {
+  if (target.dataset.staggerChildren) {
+    [...target.children].forEach((el: any, idx: number) => {
+      el?.style?.setProperty(
+        'transition-delay',
+        `${Number(target.dataset.staggerChildren) * (idx + 1)}s`
+      );
+    });
+  }
+
   if (target.dataset['sequence']) {
     target.style.setProperty(
       'transition-delay',
       `${Number(target.dataset['sequence']) * 0.188}s`
     );
-
     toggleAnimateClass(target, isIntersecting);
   } else {
     toggleAnimateClass(target, isIntersecting);
